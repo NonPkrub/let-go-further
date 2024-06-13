@@ -21,9 +21,12 @@ import (
 	"let-go.jame.net/internal/data"
 	"let-go.jame.net/internal/jsonlog"
 	"let-go.jame.net/internal/mailer"
+	"let-go.jame.net/internal/vcs"
 )
 
-const version = "1.0.0"
+var (
+	version = vcs.Version()
+)
 
 // Add a db struct field to hold the configuration settings for our database connection
 // pool. For now this only holds the DSN, which we will read in from a command-line flag.
